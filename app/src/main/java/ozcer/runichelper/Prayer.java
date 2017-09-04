@@ -22,6 +22,7 @@ public class Prayer {
         onImage = builder.onImage;
         offImage = builder.offImage;
 
+
         button.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {

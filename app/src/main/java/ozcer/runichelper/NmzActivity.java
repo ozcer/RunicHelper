@@ -13,6 +13,7 @@ import android.widget.TextView;
 public class NmzActivity extends AppCompatActivity {
 
 
+
     static EditText edtPrayerLevel;
     static Integer prayerLevel;
     static EditText edtPrayerBonus;
@@ -167,7 +168,7 @@ public class NmzActivity extends AppCompatActivity {
         View rootView = findViewById(android.R.id.content);
         // thick skin
         int thickSkinButtonId = R.id.btn_thickSkin;
-        Float thickSkinDR = (1f/3f);
+        Float thickSkinDR = (1f/12f);
         Drawable thickSkinOn = ContextCompat.getDrawable(getApplicationContext(),
                 R.drawable.thick_skin_on);
         Drawable thickSkinOff = ContextCompat.getDrawable(getApplicationContext(),
@@ -176,7 +177,8 @@ public class NmzActivity extends AppCompatActivity {
         Prayer thickSkin = new PrayerBuilder()
                 .button(thickSkinButtonId, rootView)
                 .drainRate(thickSkinDR)
-                .sprites(thickSkinOn, thickSkinOff)
+                .onSprite(thickSkinOn)
+                .offSprite(thickSkinOff)
                 .build();
 
         // burst of strength
@@ -190,7 +192,58 @@ public class NmzActivity extends AppCompatActivity {
         Prayer burstOfStrength = new PrayerBuilder()
                 .button(bustOfStrengthButtonId, rootView)
                 .drainRate(burstOfStrengthDR)
-                .sprites(burstOfStrengthOn, burstOfStrengthOff)
+                .onSprite(burstOfStrengthOn)
+                .offSprite(burstOfStrengthOff)
+                .build();
+
+        // clarity of thought
+        int clarityOfThoughtButtonId = R.id.btn_clarityOfThought;
+        Float clarityOfThoughtDR = (1f/12f);
+        Drawable clarityOfThoughtOn = ContextCompat.getDrawable(getApplicationContext(),
+                R.drawable.clarity_of_thought_on);
+        Drawable clarityOfThoughtOff = ContextCompat.getDrawable(getApplicationContext(),
+                R.drawable.clarity_of_thought_off);
+
+        Prayer clarityOfThought = new PrayerBuilder()
+                .button(clarityOfThoughtButtonId, rootView)
+                .drainRate(clarityOfThoughtDR)
+                .onSprite(clarityOfThoughtOn)
+                .offSprite(clarityOfThoughtOff)
+                .build();
+
+        // clarity of thought
+        int sharpEyeButtonId = R.id.btn_sharpEye;
+        Float sharpEyeDR = (1f/12f);
+        Drawable sharpEyeOn = ContextCompat.getDrawable(getApplicationContext(),
+                R.drawable.sharp_eye_on);
+        Drawable sharpEyeOff = ContextCompat.getDrawable(getApplicationContext(),
+                R.drawable.sharp_eye_off);
+
+        Prayer sharpEye = new PrayerBuilder()
+                .button(sharpEyeButtonId, rootView)
+                .drainRate(sharpEyeDR)
+                .onSprite(sharpEyeOn)
+                .offSprite(sharpEyeOff)
+                .build();
+
+        // clarity of thought
+        Prayer mysticWill = new PrayerBuilder()
+                .button(R.id.btn_mysticWill, rootView)
+                .drainRate(1f/12f)
+                .onSprite(ContextCompat.getDrawable(getApplicationContext(),
+                        R.drawable.mystic_will_on))
+                .offSprite(ContextCompat.getDrawable(getApplicationContext(),
+                        R.drawable.mystic_will_off))
+                .build();
+
+        // clarity of thought
+        Prayer rockSkin = new PrayerBuilder()
+                .button(R.id.btn_rockSkin, rootView)
+                .drainRate(1f/6f)
+                .onSprite(ContextCompat.getDrawable(getApplicationContext(),
+                        R.drawable.rock_skin_on))
+                .offSprite(ContextCompat.getDrawable(getApplicationContext(),
+                        R.drawable.rock_skin_off))
                 .build();
 
     }
@@ -228,7 +281,6 @@ public class NmzActivity extends AppCompatActivity {
         };
 
     }*/
-
     public static void updatePotions() {
         if(maxTime == 0f) {
             prayerPotionAmount = 0;

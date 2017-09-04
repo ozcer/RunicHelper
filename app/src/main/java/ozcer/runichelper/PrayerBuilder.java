@@ -29,8 +29,12 @@ public class PrayerBuilder {
         return this;
     }
 
-    public PrayerBuilder sprites(Drawable on, Drawable off) {
+    public PrayerBuilder onSprite(Drawable on) {
         onImage = on;
+        return this;
+    }
+
+    public PrayerBuilder offSprite(Drawable off) {
         offImage = off;
         return this;
     }
