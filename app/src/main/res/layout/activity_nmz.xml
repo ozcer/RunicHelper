@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ozcer.runichelper.NmzActivity"
+
+    android:padding="6dp"
+
+    android:orientation="vertical"
+    android:weightSum="100"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:text="prayer drain: "
+
+            android:textSize="25dp"
+            android:layout_weight="50"
+            />
+        <TextView
+            android:id="@+id/drainRate"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:text="1.234"
+            android:textSize="25dp"
+
+            android:layout_weight="50"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="60">
+
+        <ToggleButton
+            android:id="@+id/btn_thickSkin"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="@drawable/thick_skin_off"
+
+            android:textOff=""
+            android:textOn="" />
+
+        <ToggleButton
+            android:id="@+id/btn_burstOfStrength"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="@drawable/burst_of_strength_off"
+            android:textOff=""
+            android:textOn="" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="32"
+        android:orientation="vertical"
+        android:weightSum="40"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10"
+            android:orientation="horizontal"
+            android:weightSum="100"
+            >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+
+                android:text="prayer level: "
+                android:textSize="20dp"
+
+
+                android:layout_weight="35"
+                />
+
+            <EditText
+                android:id="@+id/edt_prayerLevel"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+
+                android:hint="prayer level"
+                android:textSize="17dp"
+                android:text="1"
+                android:inputType="number"
+
+                android:layout_weight="15"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+
+
+                android:textSize="20dp"
+                android:text="prayer bonus: "
+
+                android:layout_weight="35"
+                />
+            <EditText
+                android:id="@+id/edt_prayerBonus"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:hint="prayer bonus"
+                android:text="0"
+                android:textSize="17dp"
+                android:inputType="number"
+
+                android:layout_weight="15"
+                />
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10"
+            android:orientation="vertical"
+            android:weightSum="100"
+            >
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="50"
+
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+
+                    android:text="max time: "
+                    android:textSize="25dp"
+
+                    android:layout_weight="50"
+
+                    />
+
+                <EditText
+                    android:id="@+id/edt_maxTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:textSize="20dp"
+                    android:hint="input minutes"
+                    android:text="0"
+                    android:inputType="number"
+
+                    android:layout_weight="50"
+
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10"
+            android:orientation="horizontal"
+            android:weightSum="10"
+            >
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+
+                android:weightSum="10"
+                android:orientation="horizontal"
+                >
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:src="@drawable/prayer_potion"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="25dp"
+                    android:gravity="center"
+                    android:text="X"
+                    />
+                <TextView
+                    android:id="@+id/tv_prayerPotionAmount"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="6"
+
+                    android:text="123"
+                    android:textSize="25dp"
+                    android:gravity="center"
+
+                    />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                >
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:src="@drawable/overload"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="25dp"
+                    android:gravity="center"
+                    android:text="X"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_overloadAmount"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="6"
+
+                    android:text="123"
+                    android:textSize="25dp"
+                    android:gravity="center"
+
+                    />
+
+
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10"
+            android:weightSum="100"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:text="repot every "
+                android:textSize="17dp"
+
+                android:layout_weight="25"
+                />
+
+            <TextView
+
+                android:id="@+id/tv_prayerPotionRepotTime"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="50 sec"
+                android:textSize="17dp"
+
+                android:layout_weight="25"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:text="repot every "
+                android:textSize="17dp"
+
+                android:layout_weight="25"
+                />
+
+            <TextView
+                android:id="@+id/tv_overloadRepotTime"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="5min 0s"
+                android:textSize="17dp"
+
+                android:layout_weight="25"
+                />
+
+
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+</LinearLayout>
