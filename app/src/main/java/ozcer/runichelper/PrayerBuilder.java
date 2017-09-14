@@ -45,6 +45,7 @@ public class PrayerBuilder {
             Log.e("PrayerBuilder", "insufficient params");
             return null;
         }
+        button.setBackground(offImage);
         return new Prayer(this);
     }
 }

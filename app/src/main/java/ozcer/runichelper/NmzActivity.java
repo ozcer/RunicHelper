@@ -7,7 +7,9 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.GridLayout;
 import android.widget.TextView;
 
 public class NmzActivity extends AppCompatActivity {
@@ -166,6 +168,7 @@ public class NmzActivity extends AppCompatActivity {
 
 
         View rootView = findViewById(android.R.id.content);
+
         // thick skin
         int thickSkinButtonId = R.id.btn_thickSkin;
         Float thickSkinDR = (1f/12f);
@@ -181,6 +184,7 @@ public class NmzActivity extends AppCompatActivity {
                 .offSprite(thickSkinOff)
                 .build();
 
+
         // burst of strength
         int bustOfStrengthButtonId = R.id.btn_burstOfStrength;
         Float burstOfStrengthDR = (1f/12f);
@@ -195,6 +199,7 @@ public class NmzActivity extends AppCompatActivity {
                 .onSprite(burstOfStrengthOn)
                 .offSprite(burstOfStrengthOff)
                 .build();
+
 
         // clarity of thought
         int clarityOfThoughtButtonId = R.id.btn_clarityOfThought;

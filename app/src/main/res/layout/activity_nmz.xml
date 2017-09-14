@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,14 +9,14 @@
     android:padding="6dp"
 
     android:orientation="vertical"
-    android:weightSum="100"
 
 
 
     >
     <LinearLayout
+        android:id="@+id/nmz_header"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_weight="8"
         >
 
@@ -42,93 +42,12 @@
 
 
     </LinearLayout>
-    <GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="60"
-        android:padding="4dp"
-
-        android:alignmentMode="alignBounds"
-        android:columnCount="5"
-        android:useDefaultMargins="false"
-        android:rowOrderPreserved="false"
-        >
-        <ToggleButton
-            android:id="@+id/btn_thickSkin"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:background="@drawable/thick_skin_off"
-
-            android:textOff=""
-            android:textOn=""
-
-
-            android:layout_columnWeight="1"
-            />
-
-        <ToggleButton
-            android:id="@+id/btn_burstOfStrength"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:background="@drawable/burst_of_strength_off"
-            android:textOff=""
-            android:textOn=""
-
-            android:layout_gravity="fill_horizontal"
-            android:layout_columnWeight="1"
-            />
-
-        <ToggleButton
-            android:id="@+id/btn_clarityOfThought"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:background="@drawable/clarity_of_thought_off"
-            android:textOff=""
-            android:textOn=""
-
-            android:layout_columnWeight="1"
-            />
-
-        <ToggleButton
-            android:id="@+id/btn_sharpEye"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:background="@drawable/sharp_eye_off"
-            android:textOff=""
-            android:textOn=""
-
-            android:layout_columnWeight="1"
-            />
-
-        <ToggleButton
-            android:id="@+id/btn_mysticWill"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:background="@drawable/mystic_will_off"
-            android:textOff=""
-            android:textOn=""
-
-            android:layout_columnWeight="1"
-            />
-
-        <ToggleButton
-            android:id="@+id/btn_rockSkin"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:background="@drawable/rock_skin_off"
-            android:textOff=""
-            android:textOn=""
-
-            android:layout_columnWeight="1"
-            />
-
-    </GridLayout>
-
     <LinearLayout
+        android:id="@+id/nmz_footer"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="32"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:layout_alignParentBottom="true"
         android:weightSum="40"
         >
         <LinearLayout
@@ -373,6 +292,442 @@
 
 
     </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nmz_header"
+        android:layout_above="@id/nmz_footer"
+        >
+
+        <GridLayout
+            android:id="@+id/prayerGrid"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="70"
+            android:alignmentMode="alignBounds"
+
+            android:columnCount="5"
+            android:padding="4dp"
+            android:rowOrderPreserved="false"
+            android:useDefaultMargins="false">
+
+            <ozcer.runichelper.SquareRelativeLayout
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_columnWeight="1"
+                android:layout_gravity="center"
+                android:padding="5dp">
+
+                <ToggleButton
+                    android:id="@+id/btn_thickSkin"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/thick_skin_off"
+
+                    android:textOff=""
+                    android:textOn="" />
+            </ozcer.runichelper.SquareRelativeLayout>
+
+            <ozcer.runichelper.SquareRelativeLayout
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_columnWeight="1"
+                android:layout_gravity="center"
+                android:padding="5dp">
+
+                <ToggleButton
+                    android:id="@+id/btn_burstOfStrength"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/burst_of_strength_off"
+                    android:padding="5dp"
+                    android:textOff=""
+                    android:textOn="" />
+            </ozcer.runichelper.SquareRelativeLayout>
+
+            <ozcer.runichelper.SquareRelativeLayout
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_columnWeight="1"
+                android:layout_gravity="center"
+                android:padding="5dp">
+
+                <ToggleButton
+                    android:id="@+id/btn_clarityOfThought"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/clarity_of_thought_off"
+                    android:padding="5dp"
+                    android:textOff=""
+                    android:textOn="" />
+            </ozcer.runichelper.SquareRelativeLayout>
+
+            <ozcer.runichelper.SquareRelativeLayout
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_columnWeight="1"
+                android:layout_gravity="center"
+                android:padding="5dp">
+
+                <ToggleButton
+                    android:id="@+id/btn_sharpEye"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/sharp_eye_off"
+                    android:padding="5dp"
+                    android:textOff=""
+                    android:textOn="" />
+            </ozcer.runichelper.SquareRelativeLayout>
+
+            <ozcer.runichelper.SquareRelativeLayout
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_columnWeight="1"
+                android:layout_gravity="center"
+                android:padding="5dp">
+
+                <ToggleButton
+                    android:id="@+id/btn_mysticWill"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/mystic_will_off"
+                    android:padding="5dp"
+                    android:textOff=""
+                    android:textOn="" />
+            </ozcer.runichelper.SquareRelativeLayout>
+
+            <ozcer.runichelper.SquareRelativeLayout
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_columnWeight="1"
+                android:layout_gravity="center"
+                android:padding="5dp">
+
+                <ToggleButton
+                    android:id="@+id/btn_rockSkin"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/rock_skin_off"
+                    android:padding="5dp"
+                    android:textOff=""
+                    android:textOn="" />
+            </ozcer.runichelper.SquareRelativeLayout>
+
+            <ozcer.runichelper.SquareRelativeLayout
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_columnWeight="1"
+                android:layout_gravity="center"
+                android:padding="5dp">
+
+                <ToggleButton
+                    android:id="@+id/btn_sharpEye"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/sharp_eye_off"
+                    android:padding="5dp"
+                    android:textOff=""
+                    android:textOn="" />
+            </ozcer.runichelper.SquareRelativeLayout>
+
+            <ozcer.runichelper.SquareRelativeLayout
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_columnWeight="1"
+                android:layout_gravity="center"
+                android:padding="5dp">
+
+                <ToggleButton
+                    android:id="@+id/btn_sharpEye"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/sharp_eye_off"
+                    android:padding="5dp"
+                    android:textOff=""
+                    android:textOn="" />
+            </ozcer.runichelper.SquareRelativeLayout>
+
+            <ozcer.runichelper.SquareRelativeLayout
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_columnWeight="1"
+                android:layout_gravity="center"
+                android:padding="5dp">
+
+                <ToggleButton
+                    android:id="@+id/btn_sharpEye"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/sharp_eye_off"
+                    android:padding="5dp"
+                    android:textOff=""
+                    android:textOn="" />
+            </ozcer.runichelper.SquareRelativeLayout>
+
+            <ozcer.runichelper.SquareRelativeLayout
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_columnWeight="1"
+                android:layout_gravity="center"
+                android:padding="5dp">
+
+                <ToggleButton
+                    android:id="@+id/btn_sharpEye"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/sharp_eye_off"
+                    android:padding="5dp"
+                    android:textOff=""
+                    android:textOn="" />
+            </ozcer.runichelper.SquareRelativeLayout>
+
+            <ozcer.runichelper.SquareRelativeLayout
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_columnWeight="1"
+                android:layout_gravity="center"
+                android:padding="5dp">
+
+                <ToggleButton
+                    android:id="@+id/btn_sharpEye"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/sharp_eye_off"
+                    android:padding="5dp"
+                    android:textOff=""
+                    android:textOn="" />
+            </ozcer.runichelper.SquareRelativeLayout>
+
+            <ozcer.runichelper.SquareRelativeLayout
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_columnWeight="1"
+                android:layout_gravity="center"
+                android:padding="5dp">
+
+                <ToggleButton
+                    android:id="@+id/btn_sharpEye"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/sharp_eye_off"
+                    android:padding="5dp"
+                    android:textOff=""
+                    android:textOn="" />
+            </ozcer.runichelper.SquareRelativeLayout>
+
+            <ozcer.runichelper.SquareRelativeLayout
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_columnWeight="1"
+                android:layout_gravity="center"
+                android:padding="5dp">
+
+                <ToggleButton
+                    android:id="@+id/btn_sharpEye"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/sharp_eye_off"
+                    android:padding="5dp"
+                    android:textOff=""
+                    android:textOn="" />
+            </ozcer.runichelper.SquareRelativeLayout>
+
+            <ozcer.runichelper.SquareRelativeLayout
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_columnWeight="1"
+                android:layout_gravity="center"
+                android:padding="5dp">
+
+                <ToggleButton
+                    android:id="@+id/btn_sharpEye"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/sharp_eye_off"
+                    android:padding="5dp"
+                    android:textOff=""
+                    android:textOn="" />
+            </ozcer.runichelper.SquareRelativeLayout>
+
+            <ozcer.runichelper.SquareRelativeLayout
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_columnWeight="1"
+                android:layout_gravity="center"
+                android:padding="5dp">
+
+                <ToggleButton
+                    android:id="@+id/btn_sharpEye"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/sharp_eye_off"
+                    android:padding="5dp"
+                    android:textOff=""
+                    android:textOn="" />
+            </ozcer.runichelper.SquareRelativeLayout>
+
+            <ozcer.runichelper.SquareRelativeLayout
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_columnWeight="1"
+                android:layout_gravity="center"
+                android:padding="5dp">
+
+                <ToggleButton
+                    android:id="@+id/btn_sharpEye"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/sharp_eye_off"
+                    android:padding="5dp"
+                    android:textOff=""
+                    android:textOn="" />
+            </ozcer.runichelper.SquareRelativeLayout>
+
+            <ozcer.runichelper.SquareRelativeLayout
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_columnWeight="1"
+                android:layout_gravity="center"
+                android:padding="5dp">
+
+                <ToggleButton
+                    android:id="@+id/btn_sharpEye"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/sharp_eye_off"
+                    android:padding="5dp"
+                    android:textOff=""
+                    android:textOn="" />
+            </ozcer.runichelper.SquareRelativeLayout>
+
+            <ozcer.runichelper.SquareRelativeLayout
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_columnWeight="1"
+                android:layout_gravity="center"
+                android:padding="5dp">
+
+                <ToggleButton
+                    android:id="@+id/btn_sharpEye"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/sharp_eye_off"
+                    android:padding="5dp"
+                    android:textOff=""
+                    android:textOn="" />
+            </ozcer.runichelper.SquareRelativeLayout>
+
+            <ozcer.runichelper.SquareRelativeLayout
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_columnWeight="1"
+                android:layout_gravity="center"
+                android:padding="5dp">
+
+                <ToggleButton
+                    android:id="@+id/btn_sharpEye"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/sharp_eye_off"
+                    android:padding="5dp"
+                    android:textOff=""
+                    android:textOn="" />
+            </ozcer.runichelper.SquareRelativeLayout>
+
+            <ozcer.runichelper.SquareRelativeLayout
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_columnWeight="1"
+                android:layout_gravity="center"
+                android:padding="5dp">
+
+                <ToggleButton
+                    android:id="@+id/btn_sharpEye"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/sharp_eye_off"
+                    android:padding="5dp"
+                    android:textOff=""
+                    android:textOn="" />
+            </ozcer.runichelper.SquareRelativeLayout>
+
+            <ozcer.runichelper.SquareRelativeLayout
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_columnWeight="1"
+                android:layout_gravity="center"
+                android:padding="5dp">
+
+                <ToggleButton
+                    android:id="@+id/btn_sharpEye"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/sharp_eye_off"
+                    android:padding="5dp"
+                    android:textOff=""
+                    android:textOn="" />
+            </ozcer.runichelper.SquareRelativeLayout>
+
+            <ozcer.runichelper.SquareRelativeLayout
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_columnWeight="1"
+                android:layout_gravity="center"
+                android:padding="5dp">
+
+                <ToggleButton
+                    android:id="@+id/btn_sharpEye"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/sharp_eye_off"
+                    android:padding="5dp"
+                    android:textOff=""
+                    android:textOn="" />
+            </ozcer.runichelper.SquareRelativeLayout>
+
+            <ozcer.runichelper.SquareRelativeLayout
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_columnWeight="1"
+                android:layout_gravity="center"
+                android:padding="5dp">
+
+                <ToggleButton
+                    android:id="@+id/btn_sharpEye"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/sharp_eye_off"
+                    android:padding="5dp"
+                    android:textOff=""
+                    android:textOn="" />
+            </ozcer.runichelper.SquareRelativeLayout>
+
+            <ozcer.runichelper.SquareRelativeLayout
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_columnWeight="1"
+                android:layout_gravity="center"
+                android:padding="5dp">
+
+                <ToggleButton
+                    android:id="@+id/btn_sharpEye"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/sharp_eye_off"
+                    android:padding="5dp"
+                    android:textOff=""
+                    android:textOn="" />
+            </ozcer.runichelper.SquareRelativeLayout>
+
+            <ozcer.runichelper.SquareRelativeLayout
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_columnWeight="1"
+                android:layout_gravity="center"
+                android:padding="5dp"></ozcer.runichelper.SquareRelativeLayout>
+
+        </GridLayout>
+    </ScrollView>
 
 
 
@@ -381,4 +736,6 @@
 
 
 
-</LinearLayout>
+
+
+</RelativeLayout>
