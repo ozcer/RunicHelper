@@ -17,27 +17,22 @@
         android:id="@+id/nmz_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="8"
+        android:padding="5dp"
         >
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="prayer drain: "
-
-            android:textSize="25dp"
-            android:layout_weight="50"
+            style="@style/fontSizeRead"
             />
         <TextView
             android:id="@+id/drainRate"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
             android:text="1.234"
-            android:textSize="25dp"
+            style="@style/fontSizeRead"
 
-            android:layout_weight="50"
             />
 
 
@@ -46,73 +41,78 @@
         android:id="@+id/nmz_footer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="5dp"
         android:orientation="vertical"
         android:layout_alignParentBottom="true"
-        android:weightSum="40"
         >
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="10"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="100"
             >
-
-            <TextView
+            <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_weight="50"
+                >
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:text="prayer level: "
+                    style="@style/fontSizeRead" />
 
-                android:text="prayer level: "
-                android:textSize="20dp"
+                <EditText
+                    android:id="@+id/edt_prayerLevel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:hint="prayer level"
+                    style="@style/fontSizeRead"
+                    android:text="1"
+                    android:inputType="number"
+
+                    />
+
+            </LinearLayout>
 
 
-                android:layout_weight="35"
-                />
-
-            <EditText
-                android:id="@+id/edt_prayerLevel"
+            <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    style="@style/fontSizeRead"
+                    android:text="prayer bonus: "
+                    />
+                <EditText
+                    android:id="@+id/edt_prayerBonus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="prayer bonus"
+                    android:text="0"
+                    style="@style/fontSizeRead"
+                    android:inputType="number"
 
-                android:hint="prayer level"
-                android:textSize="17dp"
-                android:text="1"
-                android:inputType="number"
-
-                android:layout_weight="15"
-                />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical"
+                    />
 
 
-                android:textSize="20dp"
-                android:text="prayer bonus: "
+            </LinearLayout>
 
-                android:layout_weight="35"
-                />
-            <EditText
-                android:id="@+id/edt_prayerBonus"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:hint="prayer bonus"
-                android:text="0"
-                android:textSize="17dp"
-                android:inputType="number"
-
-                android:layout_weight="15"
-                />
         </LinearLayout>
 
 
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="10"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:weightSum="100"
             >
@@ -120,33 +120,26 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="50"
+                android:layout_height="wrap_content"
 
                 >
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:gravity="center_vertical"
-
                     android:text="max time: "
-                    android:textSize="25dp"
-
-                    android:layout_weight="50"
-
+                    style="@style/fontSizeRead"
                     />
 
                 <EditText
                     android:id="@+id/edt_maxTime"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-
-                    android:textSize="20dp"
+                    android:layout_height="wrap_content"
+                    style="@style/fontSizeRead"
                     android:hint="input minutes"
                     android:text="0"
                     android:inputType="number"
 
-                    android:layout_weight="50"
 
                     />
             </LinearLayout>
@@ -154,14 +147,13 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="10"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="10"
             >
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="5"
 
                 android:weightSum="10"
@@ -186,9 +178,8 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="6"
-
                     android:text="123"
-                    android:textSize="25dp"
+                    style="@style/fontSizeRead"
                     android:gravity="center"
 
                     />
@@ -198,7 +189,7 @@
 
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="5"
                 >
                 <ImageView
@@ -221,9 +212,8 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="6"
-
                     android:text="123"
-                    android:textSize="25dp"
+                    style="@style/fontSizeRead"
                     android:gravity="center"
 
                     />
@@ -238,8 +228,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="10"
+            android:layout_height="wrap_content"
             android:weightSum="100"
             >
 
@@ -248,7 +237,7 @@
                 android:layout_height="match_parent"
 
                 android:text="repot every "
-                android:textSize="17dp"
+                style="@style/fontSizeRead"
 
                 android:layout_weight="25"
                 />
@@ -259,7 +248,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="50 sec"
-                android:textSize="17dp"
+                style="@style/fontSizeRead"
 
                 android:layout_weight="25"
                 />
@@ -269,7 +258,7 @@
                 android:layout_height="match_parent"
 
                 android:text="repot every "
-                android:textSize="17dp"
+                style="@style/fontSizeRead"
 
                 android:layout_weight="25"
                 />
@@ -279,7 +268,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="5min 0s"
-                android:textSize="17dp"
+                style="@style/fontSizeRead"
 
                 android:layout_weight="25"
                 />
@@ -421,10 +410,10 @@
                 android:padding="5dp">
 
                 <ToggleButton
-                    android:id="@+id/btn_sharpEye"
+                    android:id="@+id/btn_superHumanStrength"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-                    android:background="@drawable/sharp_eye_off"
+                    android:background="@drawable/superhuman_strength_off"
                     android:padding="5dp"
                     android:textOff=""
                     android:textOn="" />
@@ -438,10 +427,10 @@
                 android:padding="5dp">
 
                 <ToggleButton
-                    android:id="@+id/btn_sharpEye"
+                    android:id="@+id/btn_improvedReflexes"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-                    android:background="@drawable/sharp_eye_off"
+                    android:background="@drawable/improved_reflexes_off"
                     android:padding="5dp"
                     android:textOff=""
                     android:textOn="" />
@@ -455,10 +444,10 @@
                 android:padding="5dp">
 
                 <ToggleButton
-                    android:id="@+id/btn_sharpEye"
+                    android:id="@+id/btn_rapidRestore"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-                    android:background="@drawable/sharp_eye_off"
+                    android:background="@drawable/rapid_restore_off"
                     android:padding="5dp"
                     android:textOff=""
                     android:textOn="" />
@@ -472,10 +461,10 @@
                 android:padding="5dp">
 
                 <ToggleButton
-                    android:id="@+id/btn_sharpEye"
+                    android:id="@+id/btn_rapidHeal"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-                    android:background="@drawable/sharp_eye_off"
+                    android:background="@drawable/rapid_heal_off"
                     android:padding="5dp"
                     android:textOff=""
                     android:textOn="" />
@@ -489,10 +478,10 @@
                 android:padding="5dp">
 
                 <ToggleButton
-                    android:id="@+id/btn_sharpEye"
+                    android:id="@+id/btn_protectItem"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-                    android:background="@drawable/sharp_eye_off"
+                    android:background="@drawable/protect_item_off"
                     android:padding="5dp"
                     android:textOff=""
                     android:textOn="" />
@@ -506,10 +495,10 @@
                 android:padding="5dp">
 
                 <ToggleButton
-                    android:id="@+id/btn_sharpEye"
+                    android:id="@+id/btn_hawkEye"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-                    android:background="@drawable/sharp_eye_off"
+                    android:background="@drawable/hawk_eye_off"
                     android:padding="5dp"
                     android:textOff=""
                     android:textOn="" />
@@ -523,10 +512,10 @@
                 android:padding="5dp">
 
                 <ToggleButton
-                    android:id="@+id/btn_sharpEye"
+                    android:id="@+id/btn_mysticLore"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-                    android:background="@drawable/sharp_eye_off"
+                    android:background="@drawable/mystic_lore_off"
                     android:padding="5dp"
                     android:textOff=""
                     android:textOn="" />
@@ -540,10 +529,10 @@
                 android:padding="5dp">
 
                 <ToggleButton
-                    android:id="@+id/btn_sharpEye"
+                    android:id="@+id/btn_steelSkin"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-                    android:background="@drawable/sharp_eye_off"
+                    android:background="@drawable/steel_skin_off"
                     android:padding="5dp"
                     android:textOff=""
                     android:textOn="" />
@@ -557,10 +546,10 @@
                 android:padding="5dp">
 
                 <ToggleButton
-                    android:id="@+id/btn_sharpEye"
+                    android:id="@+id/btn_ultimateStrength"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-                    android:background="@drawable/sharp_eye_off"
+                    android:background="@drawable/ultimate_strength_off"
                     android:padding="5dp"
                     android:textOff=""
                     android:textOn="" />
@@ -574,10 +563,10 @@
                 android:padding="5dp">
 
                 <ToggleButton
-                    android:id="@+id/btn_sharpEye"
+                    android:id="@+id/btn_incredibleReflexes"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-                    android:background="@drawable/sharp_eye_off"
+                    android:background="@drawable/incredible_reflexes_off"
                     android:padding="5dp"
                     android:textOff=""
                     android:textOn="" />
@@ -591,10 +580,10 @@
                 android:padding="5dp">
 
                 <ToggleButton
-                    android:id="@+id/btn_sharpEye"
+                    android:id="@+id/btn_protectFromMagic"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-                    android:background="@drawable/sharp_eye_off"
+                    android:background="@drawable/protect_from_magic_off"
                     android:padding="5dp"
                     android:textOff=""
                     android:textOn="" />
@@ -608,10 +597,10 @@
                 android:padding="5dp">
 
                 <ToggleButton
-                    android:id="@+id/btn_sharpEye"
+                    android:id="@+id/btn_protectFromMissiles"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-                    android:background="@drawable/sharp_eye_off"
+                    android:background="@drawable/protect_from_missiles_off"
                     android:padding="5dp"
                     android:textOff=""
                     android:textOn="" />
@@ -625,10 +614,10 @@
                 android:padding="5dp">
 
                 <ToggleButton
-                    android:id="@+id/btn_sharpEye"
+                    android:id="@+id/btn_protectFromMelee"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-                    android:background="@drawable/sharp_eye_off"
+                    android:background="@drawable/protect_from_melee_off"
                     android:padding="5dp"
                     android:textOff=""
                     android:textOn="" />
@@ -642,10 +631,10 @@
                 android:padding="5dp">
 
                 <ToggleButton
-                    android:id="@+id/btn_sharpEye"
+                    android:id="@+id/btn_eagleEye"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-                    android:background="@drawable/sharp_eye_off"
+                    android:background="@drawable/eagle_eye_off"
                     android:padding="5dp"
                     android:textOff=""
                     android:textOn="" />
@@ -659,10 +648,10 @@
                 android:padding="5dp">
 
                 <ToggleButton
-                    android:id="@+id/btn_sharpEye"
+                    android:id="@+id/btn_mysticMight"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-                    android:background="@drawable/sharp_eye_off"
+                    android:background="@drawable/mystic_might_off"
                     android:padding="5dp"
                     android:textOff=""
                     android:textOn="" />
@@ -676,10 +665,10 @@
                 android:padding="5dp">
 
                 <ToggleButton
-                    android:id="@+id/btn_sharpEye"
+                    android:id="@+id/btn_retribution"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-                    android:background="@drawable/sharp_eye_off"
+                    android:background="@drawable/retribution_off"
                     android:padding="5dp"
                     android:textOff=""
                     android:textOn="" />
@@ -693,10 +682,10 @@
                 android:padding="5dp">
 
                 <ToggleButton
-                    android:id="@+id/btn_sharpEye"
+                    android:id="@+id/btn_redemption"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-                    android:background="@drawable/sharp_eye_off"
+                    android:background="@drawable/redemption_off"
                     android:padding="5dp"
                     android:textOff=""
                     android:textOn="" />
@@ -710,10 +699,10 @@
                 android:padding="5dp">
 
                 <ToggleButton
-                    android:id="@+id/btn_sharpEye"
+                    android:id="@+id/btn_smite"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-                    android:background="@drawable/sharp_eye_off"
+                    android:background="@drawable/smite_off"
                     android:padding="5dp"
                     android:textOff=""
                     android:textOn="" />
@@ -724,18 +713,88 @@
                 android:layout_height="64dp"
                 android:layout_columnWeight="1"
                 android:layout_gravity="center"
-                android:padding="5dp"></ozcer.runichelper.SquareRelativeLayout>
+                android:padding="5dp">
+
+                <ToggleButton
+                    android:id="@+id/btn_preserve"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/preserve_off"
+                    android:padding="5dp"
+                    android:textOff=""
+                    android:textOn="" />
+            </ozcer.runichelper.SquareRelativeLayout>
+
+            <ozcer.runichelper.SquareRelativeLayout
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_columnWeight="1"
+                android:layout_gravity="center"
+                android:padding="5dp">
+
+                <ToggleButton
+                    android:id="@+id/btn_chivalry"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/chivalry_off"
+                    android:padding="5dp"
+                    android:textOff=""
+                    android:textOn="" />
+            </ozcer.runichelper.SquareRelativeLayout>
+
+            <ozcer.runichelper.SquareRelativeLayout
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_columnWeight="1"
+                android:layout_gravity="center"
+                android:padding="5dp">
+
+                <ToggleButton
+                    android:id="@+id/btn_piety"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/piety_off"
+                    android:padding="5dp"
+                    android:textOff=""
+                    android:textOn="" />
+            </ozcer.runichelper.SquareRelativeLayout>
+
+            <ozcer.runichelper.SquareRelativeLayout
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_columnWeight="1"
+                android:layout_gravity="center"
+                android:padding="5dp">
+
+                <ToggleButton
+                    android:id="@+id/btn_rigour"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/rigour_off"
+                    android:padding="5dp"
+                    android:textOff=""
+                    android:textOn="" />
+            </ozcer.runichelper.SquareRelativeLayout>
+
+            <ozcer.runichelper.SquareRelativeLayout
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_columnWeight="1"
+                android:layout_gravity="center"
+                android:padding="5dp">
+
+                <ToggleButton
+                    android:id="@+id/btn_augury"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/augury_off"
+                    android:padding="5dp"
+                    android:textOff=""
+                    android:textOn="" />
+            </ozcer.runichelper.SquareRelativeLayout>
+
 
         </GridLayout>
     </ScrollView>
-
-
-
-
-
-
-
-
-
 
 </RelativeLayout>

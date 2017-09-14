@@ -216,7 +216,7 @@ public class NmzActivity extends AppCompatActivity {
                 .offSprite(clarityOfThoughtOff)
                 .build();
 
-        // clarity of thought
+        // sharp eye
         int sharpEyeButtonId = R.id.btn_sharpEye;
         Float sharpEyeDR = (1f/12f);
         Drawable sharpEyeOn = ContextCompat.getDrawable(getApplicationContext(),
@@ -231,7 +231,7 @@ public class NmzActivity extends AppCompatActivity {
                 .offSprite(sharpEyeOff)
                 .build();
 
-        // clarity of thought
+        // mystic will
         Prayer mysticWill = new PrayerBuilder()
                 .button(R.id.btn_mysticWill, rootView)
                 .drainRate(1f/12f)
@@ -241,7 +241,7 @@ public class NmzActivity extends AppCompatActivity {
                         R.drawable.mystic_will_off))
                 .build();
 
-        // clarity of thought
+        // rock skin
         Prayer rockSkin = new PrayerBuilder()
                 .button(R.id.btn_rockSkin, rootView)
                 .drainRate(1f/6f)
@@ -251,6 +251,235 @@ public class NmzActivity extends AppCompatActivity {
                         R.drawable.rock_skin_off))
                 .build();
 
+        // superhuman strength
+        new PrayerBuilder()
+            .button(R.id.btn_superHumanStrength, rootView)
+            .drainRate(1f/6f)
+            .onSprite(ContextCompat.getDrawable(getApplicationContext(),
+                    R.drawable.superhuman_strength_on))
+            .offSprite(ContextCompat.getDrawable(getApplicationContext(),
+                    R.drawable.superhuman_strength_off))
+            .build();
+
+        // improved reflexes
+        new PrayerBuilder()
+                .button(R.id.btn_improvedReflexes, rootView)
+                .drainRate(1f/6f)
+                .onSprite(ContextCompat.getDrawable(getApplicationContext(),
+                        R.drawable.improved_reflexes_on))
+                .offSprite(ContextCompat.getDrawable(getApplicationContext(),
+                        R.drawable.improved_reflexes_off))
+                .build();
+
+        // rapid restore
+        new PrayerBuilder()
+                .button(R.id.btn_rapidRestore, rootView)
+                .drainRate(1f/36f)
+                .onSprite(ContextCompat.getDrawable(getApplicationContext(),
+                        R.drawable.rapid_restore_on))
+                .offSprite(ContextCompat.getDrawable(getApplicationContext(),
+                        R.drawable.rapid_restore_off))
+                .build();
+
+        // rapid heal
+        new PrayerBuilder()
+                .button(R.id.btn_rapidHeal, rootView)
+                .drainRate(1f/18f)
+                .onSprite(ContextCompat.getDrawable(getApplicationContext(),
+                        R.drawable.rapid_heal_on))
+                .offSprite(ContextCompat.getDrawable(getApplicationContext(),
+                        R.drawable.rapid_heal_off))
+                .build();
+
+        // protect item
+        new PrayerBuilder()
+                .button(R.id.btn_protectItem, rootView)
+                .drainRate(1f/18f)
+                .onSprite(ContextCompat.getDrawable(getApplicationContext(),
+                        R.drawable.protect_item_on))
+                .offSprite(ContextCompat.getDrawable(getApplicationContext(),
+                        R.drawable.protect_item_off))
+                .build();
+
+        // hawk eye
+        new PrayerBuilder()
+                .button(R.id.btn_hawkEye, rootView)
+                .drainRate(1f/6f)
+                .onSprite(ContextCompat.getDrawable(getApplicationContext(),
+                        R.drawable.hawk_eye_on))
+                .offSprite(ContextCompat.getDrawable(getApplicationContext(),
+                        R.drawable.hawk_eye_off))
+                .build();
+
+        // mystic lore
+        new PrayerBuilder()
+                .button(R.id.btn_mysticLore, rootView)
+                .drainRate(1f/6f)
+                .onSprite(ContextCompat.getDrawable(getApplicationContext(),
+                        R.drawable.mystic_lore_on))
+                .offSprite(ContextCompat.getDrawable(getApplicationContext(),
+                        R.drawable.mystic_lore_off))
+                .build();
+
+        // steel skin
+        new PrayerBuilder()
+                .button(R.id.btn_steelSkin, rootView)
+                .drainRate(1f/3f)
+                .onSprite(ContextCompat.getDrawable(getApplicationContext(),
+                        R.drawable.steel_skin_on))
+                .offSprite(ContextCompat.getDrawable(getApplicationContext(),
+                        R.drawable.steel_skin_off))
+                .build();
+
+        // ultimate strength
+        new PrayerBuilder()
+                .button(R.id.btn_ultimateStrength, rootView)
+                .drainRate(1f/3f)
+                .onSprite(ContextCompat.getDrawable(getApplicationContext(),
+                        R.drawable.ultimate_strength_on))
+                .offSprite(ContextCompat.getDrawable(getApplicationContext(),
+                        R.drawable.ultimate_strength_off))
+                .build();
+
+        // incredible reflexes
+        new PrayerBuilder()
+                .button(R.id.btn_incredibleReflexes, rootView)
+                .drainRate(1f/3f)
+                .onSprite(ContextCompat.getDrawable(getApplicationContext(),
+                        R.drawable.incredible_reflexes_on))
+                .offSprite(ContextCompat.getDrawable(getApplicationContext(),
+                        R.drawable.incredible_reflexes_off))
+                .build();
+
+        // protect from magic
+        new PrayerBuilder()
+                .button(R.id.btn_protectFromMagic, rootView)
+                .drainRate(1f/3f)
+                .onSprite(ContextCompat.getDrawable(getApplicationContext(),
+                        R.drawable.protect_from_magic_on))
+                .offSprite(ContextCompat.getDrawable(getApplicationContext(),
+                        R.drawable.protect_from_magic_off))
+                .build();
+
+        // protect from missiles
+        new PrayerBuilder()
+                .button(R.id.btn_protectFromMissiles, rootView)
+                .drainRate(1f/3f)
+                .onSprite(ContextCompat.getDrawable(getApplicationContext(),
+                        R.drawable.protect_from_missiles_on))
+                .offSprite(ContextCompat.getDrawable(getApplicationContext(),
+                        R.drawable.protect_from_missiles_off))
+                .build();
+
+        // protect from melee
+        new PrayerBuilder()
+                .button(R.id.btn_protectFromMelee, rootView)
+                .drainRate(1f/3f)
+                .onSprite(ContextCompat.getDrawable(getApplicationContext(),
+                        R.drawable.protect_from_melee_on))
+                .offSprite(ContextCompat.getDrawable(getApplicationContext(),
+                        R.drawable.protect_from_melee_off))
+                .build();
+
+        // eagle eye
+        new PrayerBuilder()
+                .button(R.id.btn_eagleEye, rootView)
+                .drainRate(1f/3f)
+                .onSprite(ContextCompat.getDrawable(getApplicationContext(),
+                        R.drawable.eagle_eye_on))
+                .offSprite(ContextCompat.getDrawable(getApplicationContext(),
+                        R.drawable.eagle_eye_off))
+                .build();
+
+        // mystic mmight
+        new PrayerBuilder()
+                .button(R.id.btn_mysticMight, rootView)
+                .drainRate(1f/3f)
+                .onSprite(ContextCompat.getDrawable(getApplicationContext(),
+                        R.drawable.mystic_might_on))
+                .offSprite(ContextCompat.getDrawable(getApplicationContext(),
+                        R.drawable.mystic_might_off))
+                .build();
+
+        // retribution
+        new PrayerBuilder()
+                .button(R.id.btn_retribution, rootView)
+                .drainRate(1f/12f)
+                .onSprite(ContextCompat.getDrawable(getApplicationContext(),
+                        R.drawable.retribution_on))
+                .offSprite(ContextCompat.getDrawable(getApplicationContext(),
+                        R.drawable.retribution_off))
+                .build();
+
+        // redemption
+        new PrayerBuilder()
+                .button(R.id.btn_redemption, rootView)
+                .drainRate(1f/6f)
+                .onSprite(ContextCompat.getDrawable(getApplicationContext(),
+                        R.drawable.redemption_on))
+                .offSprite(ContextCompat.getDrawable(getApplicationContext(),
+                        R.drawable.redemption_off))
+                .build();
+
+        // smite
+        new PrayerBuilder()
+                .button(R.id.btn_smite, rootView)
+                .drainRate(1f/2f)
+                .onSprite(ContextCompat.getDrawable(getApplicationContext(),
+                        R.drawable.smite_on))
+                .offSprite(ContextCompat.getDrawable(getApplicationContext(),
+                        R.drawable.smite_off))
+                .build();
+
+        // preserve
+        new PrayerBuilder()
+                .button(R.id.btn_preserve, rootView)
+                .drainRate(1f/18f)
+                .onSprite(ContextCompat.getDrawable(getApplicationContext(),
+                        R.drawable.preserve_on))
+                .offSprite(ContextCompat.getDrawable(getApplicationContext(),
+                        R.drawable.preserve_off))
+                .build();
+
+        // chivalry
+        new PrayerBuilder()
+                .button(R.id.btn_chivalry, rootView)
+                .drainRate(1f/1.5f)
+                .onSprite(ContextCompat.getDrawable(getApplicationContext(),
+                        R.drawable.chivalry_on))
+                .offSprite(ContextCompat.getDrawable(getApplicationContext(),
+                        R.drawable.chivalry_off))
+                .build();
+
+        // piety
+        new PrayerBuilder()
+                .button(R.id.btn_piety, rootView)
+                .drainRate(1f/1.5f)
+                .onSprite(ContextCompat.getDrawable(getApplicationContext(),
+                        R.drawable.piety_on))
+                .offSprite(ContextCompat.getDrawable(getApplicationContext(),
+                        R.drawable.piety_off))
+                .build();
+
+        // rigour
+        new PrayerBuilder()
+                .button(R.id.btn_rigour, rootView)
+                .drainRate(1f/1.5f)
+                .onSprite(ContextCompat.getDrawable(getApplicationContext(),
+                        R.drawable.rigour_on))
+                .offSprite(ContextCompat.getDrawable(getApplicationContext(),
+                        R.drawable.rigour_off))
+                .build();
+
+        // augury
+        new PrayerBuilder()
+                .button(R.id.btn_augury, rootView)
+                .drainRate(1f/1.5f)
+                .onSprite(ContextCompat.getDrawable(getApplicationContext(),
+                        R.drawable.augury_on))
+                .offSprite(ContextCompat.getDrawable(getApplicationContext(),
+                        R.drawable.augury_off))
+                .build();
     }
 
     public static String round(Float f, int places) {
