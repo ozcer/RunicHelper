@@ -489,14 +489,18 @@ public class NmzActivity extends AppCompatActivity {
     public static void updateDrainRate(Float delta) {
         rawDrainRate += delta;
         Float reducedDrainRate = rawDrainRate / (((float) prayerBonus * (1f/30f)) + 1);
-        tvDrainRate.setText(round(reducedDrainRate, 3));
+        if(round(reducedDrainRate, 3).equals("-0.000")) {
+            tvDrainRate.setText("0.000 per second");
+        }else {
+            tvDrainRate.setText(round(reducedDrainRate, 3) + " per second");
+        }
         updateRepotTime();
     }
 
     public static void updateRepotTime() {
-        if(Float.valueOf(tvDrainRate.getText().toString()) > 0) {
+        if(rawDrainRate / (((float) prayerBonus * (1f/30f)) + 1) > 0) {
             Integer pPotRestoreRate = Math.min(7 + prayerLevel / 4, prayerLevel);
-            Float durationPerPrayerPotion = pPotRestoreRate / Float.valueOf(tvDrainRate.getText().toString());
+            Float durationPerPrayerPotion = pPotRestoreRate / (rawDrainRate / (((float) prayerBonus * (1f/30f)) + 1));
             tvPrayerPotionRepotTime.setText(formatTime(durationPerPrayerPotion));
         } else {
             tvPrayerPotionRepotTime.setText("N/A");

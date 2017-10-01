@@ -6,13 +6,22 @@
     android:layout_height="match_parent"
     tools:context="ozcer.runichelper.MainActivity"
     android:gravity="center"
+    android:orientation="vertical"
     >
 
     <Button
-        android:id="@+id/nmz"
+        android:id="@+id/geButton"
         android:layout_width="200dp"
         android:layout_height="50dp"
-        android:text="nmz prayer"
+        android:layout_margin="25dp"
+        android:text="Grand Exchange"
+        />
+
+    <Button
+        android:id="@+id/nmzButton"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="Nightmare Zone"
         />
 
 </LinearLayout>
