@@ -29,12 +29,15 @@ public class GeActivity extends AppCompatActivity {
 
         Button btnGeSearch = (Button) findViewById(R.id.geSearchButton);
         tvGeDisplay  = (TextView) findViewById(R.id.geDisplay);
-        EditText etGeSearchBar= (EditText) findViewById(R.id.geSearchBar);
+        final EditText edtGeSearchBar= (EditText) findViewById(R.id.geSearchBar);
 
         btnGeSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new JSONTask().execute("https://api.rsbuddy.com/grandExchange?a=guidePrice&i=2");
+                String itemId = edtGeSearchBar.getText().toString();
+                new JSONTask().execute("" +
+                        "https://api.rsbuddy.com/grandExchange?a=guidePrice&i=" +
+                        itemId);
             }
         });
 
