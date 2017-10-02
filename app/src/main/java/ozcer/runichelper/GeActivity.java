@@ -37,7 +37,7 @@ public class GeActivity extends AppCompatActivity {
         tvGeDisplay  = (TextView) findViewById(R.id.geDisplay);
         final EditText edtGeSearchBar= (EditText) findViewById(R.id.geSearchBar);
 
-        new getItemInfoTask().execute("https://rsbuddy.com/exchange/summary.json");
+        //new getItemInfoTask().execute("https://rsbuddy.com/exchange/summary.json");
 
         btnGeSearch.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,7 +60,7 @@ public class GeActivity extends AppCompatActivity {
             BufferedReader reader = null;
 
             try {
-                URL url = new URL("https://api.rsbuddy.com/grandExchange?a=guidePrice&i="+params[0]);
+                URL url = new URL("http://services.runescape.com/m=itemdb_oldschool/api/catalogue/detail.json?item="+params[0]);
                 connection  = (HttpURLConnection) url.openConnection();
                 connection.connect();
 
@@ -76,13 +76,12 @@ public class GeActivity extends AppCompatActivity {
                 }
 
                 String finalJson = buffer.toString();
-                JSONObject parentObject = new JSONObject(finalJson);
-                Integer price = parentObject.getInt("overall");
-
-                JSONObject item = itemInfo.getJSONObject(params[0]);
+                JSONObject item = (new JSONObject(finalJson)).getJSONObject("item");
                 String name = item.getString("name");
+                String price = item.getJSONObject("current").getString("price");
 
-                return ("Name: "+name+"\nPrice: "+price);
+                return String.format("Name: %s\nPrice: %s", name, price);
+
 
             } catch (MalformedURLException e) {
                 e.printStackTrace();
@@ -90,6 +89,7 @@ public class GeActivity extends AppCompatActivity {
                 e.printStackTrace();
             } catch (JSONException e) {
                 e.printStackTrace();
+                Toast.makeText(GeActivity.this, "JSON error", Toast.LENGTH_SHORT).show();
                 return "JSON error";
             } finally {
                 if(connection != null) {
