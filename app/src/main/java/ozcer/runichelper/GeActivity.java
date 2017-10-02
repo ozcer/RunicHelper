@@ -77,11 +77,10 @@ public class GeActivity extends AppCompatActivity {
 
                 String finalJson = buffer.toString();
                 JSONObject parentObject = new JSONObject(finalJson);
-                Integer overall = parentObject.getInt("overall");
+                Integer price = parentObject.getInt("overall");
 
                 JSONObject item = itemInfo.getJSONObject(params[0]);
                 String name = item.getString("name");
-                Integer price = item.getInt("overall_average");
 
                 return ("Name: "+name+"\nPrice: "+price);
 
@@ -91,6 +90,7 @@ public class GeActivity extends AppCompatActivity {
                 e.printStackTrace();
             } catch (JSONException e) {
                 e.printStackTrace();
+                return "JSON error";
             } finally {
                 if(connection != null) {
                     connection.disconnect();
