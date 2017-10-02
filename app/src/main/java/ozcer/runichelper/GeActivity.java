@@ -1,13 +1,17 @@
 package ozcer.runichelper;
 
 import android.os.AsyncTask;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -26,6 +30,8 @@ import static android.R.attr.id;
 public class GeActivity extends AppCompatActivity {
     TextView tvGeDisplay;
     EditText edtGeSearchBar;
+    ImageView ivItemImage;
+    String imageUrl = null;
     String apiBase = "http://services.runescape.com/m=itemdb_oldschool/api/";
 
 
@@ -37,6 +43,7 @@ public class GeActivity extends AppCompatActivity {
         Button btnGeSearch = (Button) findViewById(R.id.geSearchButton);
         tvGeDisplay  = (TextView) findViewById(R.id.geDisplay);
         edtGeSearchBar = (EditText) findViewById(R.id.geSearchBar);
+        ivItemImage = (ImageView) findViewById(R.id.geItemImage);
 
         btnGeSearch.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,10 +86,13 @@ public class GeActivity extends AppCompatActivity {
 
                 // grabs the first item
                 JSONObject item = (new JSONObject(finalJson)).getJSONArray("items").getJSONObject(0);
+
+                imageUrl = item.getString("icon");
+
                 String name = item.getString("name");
                 String price = item.getJSONObject("current").getString("price");
 
-                return String.format("Name: %s\nPrice: %s", name, price);
+                return String.format("%s\n%s", name, price);
 
 
             } catch (MalformedURLException e) {
@@ -114,6 +124,11 @@ public class GeActivity extends AppCompatActivity {
             } else {
                 Toast.makeText(GeActivity.this, "no item found", Toast.LENGTH_SHORT).show();
             }
+            if(imageUrl != null) {
+                Picasso.with(GeActivity.this).load(imageUrl).into(ivItemImage);
+
+            }
+
         }
     }
 
