@@ -26,6 +26,7 @@ import static android.R.attr.id;
 public class GeActivity extends AppCompatActivity {
     TextView tvGeDisplay;
     JSONObject itemInfo;
+    EditText edtGeSearchBar;
 
 
     @Override
@@ -35,7 +36,7 @@ public class GeActivity extends AppCompatActivity {
 
         Button btnGeSearch = (Button) findViewById(R.id.geSearchButton);
         tvGeDisplay  = (TextView) findViewById(R.id.geDisplay);
-        final EditText edtGeSearchBar= (EditText) findViewById(R.id.geSearchBar);
+        edtGeSearchBar = (EditText) findViewById(R.id.geSearchBar);
 
         //new getItemInfoTask().execute("https://rsbuddy.com/exchange/summary.json");
 
@@ -89,8 +90,6 @@ public class GeActivity extends AppCompatActivity {
                 e.printStackTrace();
             } catch (JSONException e) {
                 e.printStackTrace();
-                Toast.makeText(GeActivity.this, "JSON error", Toast.LENGTH_SHORT).show();
-                return "JSON error";
             } finally {
                 if(connection != null) {
                     connection.disconnect();
@@ -109,70 +108,15 @@ public class GeActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
-            tvGeDisplay.setText(result);
-        }
-    }
-
-    public class getItemInfoTask extends AsyncTask<String, String, String> {
-
-        @Override
-        protected String doInBackground(String... params) {
-            HttpURLConnection connection = null;
-            BufferedReader reader = null;
-
-            try {
-                URL url = new URL(params[0]);
-                connection  = (HttpURLConnection) url.openConnection();
-                connection.connect();
-
-                InputStream stream = connection.getInputStream();
-
-                reader = new BufferedReader(new InputStreamReader(stream));
-
-                StringBuffer buffer = new StringBuffer();
-
-                String line = "";
-                while((line = reader.readLine()) != null) {
-                    buffer.append(line);
-                }
-
-                String finalJson = buffer.toString();
-
-
-                return finalJson;
-
-
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            } finally {
-                if(connection != null) {
-                    connection.disconnect();
-                }
-                try {
-                    if(reader != null) {
-                        reader.close();
-                    }
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(String result) {
-            super.onPostExecute(result);
-            try {
-                itemInfo = new JSONObject(result);
-                Toast.makeText(GeActivity.this, "item info loaded", Toast.LENGTH_SHORT).show();
-            } catch (JSONException e) {
-                e.printStackTrace();
-                Toast.makeText(GeActivity.this, "failed to retrieve item info", Toast.LENGTH_SHORT).show();
+            if(result != null) {
+                tvGeDisplay.setText(result);
+            } else {
+                Toast.makeText(GeActivity.this, "no item found", Toast.LENGTH_SHORT).show();
             }
         }
     }
+
+
 
 }
 
