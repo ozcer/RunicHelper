@@ -25,8 +25,8 @@ import static android.R.attr.id;
 
 public class GeActivity extends AppCompatActivity {
     TextView tvGeDisplay;
-    JSONObject itemInfo;
     EditText edtGeSearchBar;
+    String apiBase = "http://services.runescape.com/m=itemdb_oldschool/api/";
 
 
     @Override
@@ -37,8 +37,6 @@ public class GeActivity extends AppCompatActivity {
         Button btnGeSearch = (Button) findViewById(R.id.geSearchButton);
         tvGeDisplay  = (TextView) findViewById(R.id.geDisplay);
         edtGeSearchBar = (EditText) findViewById(R.id.geSearchBar);
-
-        //new getItemInfoTask().execute("https://rsbuddy.com/exchange/summary.json");
 
         btnGeSearch.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,7 +59,8 @@ public class GeActivity extends AppCompatActivity {
             BufferedReader reader = null;
 
             try {
-                URL url = new URL("http://services.runescape.com/m=itemdb_oldschool/api/catalogue/detail.json?item="+params[0]);
+                URL url = new URL(
+                        String.format(apiBase+"catalogue/items.json?category=1&alpha=%s&page=1",params[0]));
                 connection  = (HttpURLConnection) url.openConnection();
                 connection.connect();
 
@@ -77,7 +76,9 @@ public class GeActivity extends AppCompatActivity {
                 }
 
                 String finalJson = buffer.toString();
-                JSONObject item = (new JSONObject(finalJson)).getJSONObject("item");
+
+                // grabs the first item
+                JSONObject item = (new JSONObject(finalJson)).getJSONArray("items").getJSONObject(0);
                 String name = item.getString("name");
                 String price = item.getJSONObject("current").getString("price");
 
