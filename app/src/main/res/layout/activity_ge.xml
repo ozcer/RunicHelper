@@ -12,20 +12,21 @@
     <TextView
         android:id="@+id/geDisplay"
         android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:layout_height="150dp"
         android:layout_margin="20dp"
-        android:text="price: n\a"
-        android:textSize="20dp"
+        android:text="Grand Exchange"
+        android:fontFamily="serif"
+        android:textSize="40dp"
         />
     <EditText
         android:id="@+id/geSearchBar"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:hint="item id"
+        android:hint="item name"
         />
     <Button
         android:id="@+id/geSearchButton"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="search"
         />
