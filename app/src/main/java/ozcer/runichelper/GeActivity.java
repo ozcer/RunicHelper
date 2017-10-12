@@ -40,10 +40,10 @@ public class GeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ge);
 
-        Button btnGeSearch = (Button) findViewById(R.id.geSearchButton);
-        tvGeDisplay  = (TextView) findViewById(R.id.geDisplay);
-        edtGeSearchBar = (EditText) findViewById(R.id.geSearchBar);
-        ivItemImage = (ImageView) findViewById(R.id.geItemImage);
+        Button btnGeSearch = (Button) findViewById(R.id.ge_searchButton);
+        tvGeDisplay  = (TextView) findViewById(R.id.ge_itemDescription);
+        edtGeSearchBar = (EditText) findViewById(R.id.ge_searchBar);
+        ivItemImage = (ImageView) findViewById(R.id.ge_itemImage);
 
         btnGeSearch.setOnClickListener(new View.OnClickListener() {
             @Override
