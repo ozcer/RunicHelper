@@ -1,7 +1,6 @@
 package ozcer.runichelper;
 
 import android.os.AsyncTask;
-import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -25,10 +24,10 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 
-import static android.R.attr.id;
-
 public class GeActivity extends AppCompatActivity {
-    TextView tvGeDisplay;
+    TextView tvItemDescription;
+    TextView tvItemName;
+    TextView tvItemPrice;
     EditText edtGeSearchBar;
     ImageView ivItemImage;
     String imageUrl = null;
@@ -41,7 +40,9 @@ public class GeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_ge);
 
         Button btnGeSearch = (Button) findViewById(R.id.ge_searchButton);
-        tvGeDisplay  = (TextView) findViewById(R.id.ge_itemDescription);
+        tvItemDescription = (TextView) findViewById(R.id.ge_itemDescription);
+        tvItemName  = (TextView) findViewById(R.id.ge_itemName);
+        tvItemPrice  = (TextView) findViewById(R.id.ge_itemPrice);
         edtGeSearchBar = (EditText) findViewById(R.id.ge_searchBar);
         ivItemImage = (ImageView) findViewById(R.id.ge_itemImage);
 
@@ -49,7 +50,9 @@ public class GeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String itemId = edtGeSearchBar.getText().toString();
-                new JSONTask().execute(itemId);
+                ArrayList<String> args = new ArrayList<String>();
+                args.add(itemId);
+                new JSONTask().execute(args);
             }
         });
 
@@ -58,16 +61,17 @@ public class GeActivity extends AppCompatActivity {
 
     }
 
-    public class JSONTask extends AsyncTask<String, String, String> {
+    public class JSONTask extends AsyncTask<ArrayList<String>, Void, ArrayList<String>> {
 
+        private ArrayList<String> args = new ArrayList<>();
         @Override
-        protected String doInBackground(String... params) {
+        protected ArrayList<String> doInBackground(ArrayList<String>... params) {
             HttpURLConnection connection = null;
             BufferedReader reader = null;
 
             try {
                 URL url = new URL(
-                        String.format(apiBase+"catalogue/items.json?category=1&alpha=%s&page=1",params[0]));
+                        String.format(apiBase+"catalogue/items.json?category=1&alpha=%s&page=1",params[0].get(0)));
                 connection  = (HttpURLConnection) url.openConnection();
                 connection.connect();
 
@@ -90,9 +94,14 @@ public class GeActivity extends AppCompatActivity {
                 imageUrl = item.getString("icon");
 
                 String name = item.getString("name");
+                String desc = item.getString("description");
                 String price = item.getJSONObject("current").getString("price");
-
-                return String.format("%s\n%s", name, price);
+                
+                args.add(name);
+                args.add(desc);
+                args.add(price);
+                
+                return args;
 
 
             } catch (MalformedURLException e) {
@@ -117,10 +126,13 @@ public class GeActivity extends AppCompatActivity {
         }
 
         @Override
-        protected void onPostExecute(String result) {
-            super.onPostExecute(result);
-            if(result != null) {
-                tvGeDisplay.setText(result);
+        protected void onPostExecute(ArrayList<String> args) {
+            super.onPostExecute(args);
+            //args = {name, desc, price}
+            if(args != null) {
+                tvItemName.setText(args.get(0));
+                tvItemDescription.setText(args.get(1));
+                tvItemPrice.setText(args.get(2));
             } else {
                 Toast.makeText(GeActivity.this, "no item found", Toast.LENGTH_SHORT).show();
             }

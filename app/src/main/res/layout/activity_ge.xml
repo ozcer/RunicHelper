@@ -55,6 +55,7 @@
                 android:layout_height="288px" />
 
             <TextView
+                android:id="@+id/ge_itemPrice"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
