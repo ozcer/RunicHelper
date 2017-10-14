@@ -1,12 +1,18 @@
 package ozcer.runichelper;
 
+import android.content.Context;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,9 +36,13 @@ public class GeActivity extends AppCompatActivity {
     TextView tvItemPrice;
     EditText edtGeSearchBar;
     ImageView ivItemImage;
+    ListView lvTrendList;
     String imageUrl = null;
     String apiBase = "http://services.runescape.com/m=itemdb_oldschool/api/";
+    String[][] trends = {{"Today's Change", "+1"}, {"1 Month Change", "+2"},
+            {"3 Month Change", "+3"}, {"6 Month Change", "+4"}};
 
+    InputMethodManager imm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +55,14 @@ public class GeActivity extends AppCompatActivity {
         tvItemPrice  = (TextView) findViewById(R.id.ge_itemPrice);
         edtGeSearchBar = (EditText) findViewById(R.id.ge_searchBar);
         ivItemImage = (ImageView) findViewById(R.id.ge_itemImage);
+        lvTrendList = (ListView) findViewById(R.id.ge_trend);
+
+        imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+
+
+        ListAdapter myAdapter = new TrendListAdapter(this, trends);
+        lvTrendList.setAdapter(myAdapter);
+
 
         btnGeSearch.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,11 +114,22 @@ public class GeActivity extends AppCompatActivity {
                 String name = item.getString("name");
                 String desc = item.getString("description");
                 String price = item.getJSONObject("current").getString("price");
-                
+                String todayChange = item.getJSONObject("today").getString("price");
+                /*
+                String oneMonthChange = item.getJSONObject("day30").getString("trend");
+                String threeMonthChange = item.getJSONObject("current").getString("trend");
+                String sixMonthChange = item.getJSONObject("current").getString("trend");
+
+               */
                 args.add(name);
                 args.add(desc);
                 args.add(price);
-                
+                args.add(todayChange);
+                /*
+                args.add(oneMonthChange);
+                args.add(threeMonthChange);
+                args.add(sixMonthChange);
+                */
                 return args;
 
 
@@ -128,11 +157,13 @@ public class GeActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(ArrayList<String> args) {
             super.onPostExecute(args);
-            //args = {name, desc, price}
+            //args = {name, desc, price, today trend, 1month trend, 3month trend, 6month trend}
             if(args != null) {
                 tvItemName.setText(args.get(0));
                 tvItemDescription.setText(args.get(1));
                 tvItemPrice.setText(args.get(2));
+                trends[0][1] = args.get(3);
+                imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
             } else {
                 Toast.makeText(GeActivity.this, "no item found", Toast.LENGTH_SHORT).show();
             }
