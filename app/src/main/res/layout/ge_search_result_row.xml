@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    >
+    
+    <ImageView
+        android:id="@+id/geSearch_itemImage"
+        android:layout_width="128px"
+        android:layout_height="128px"
+        android:layout_marginRight="10dp"
+        />
+
+    <TextView
+        android:id="@+id/geSearch_itemPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Price"
+        android:textSize="20dp"
+        android:layout_alignParentRight="true"
+        />
+
+    <TextView
+        android:id="@+id/geSearch_itemName"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:layout_toRightOf="@id/geSearch_itemImage"
+        android:layout_toLeftOf="@id/geSearch_itemPrice"
+        android:text="Item Name"
+        android:textSize="20dp"
+        />
+
+
+
+
+
+</RelativeLayout>

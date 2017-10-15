@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ozcer.runichelper.GeSearchActivity"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    android:orientation="vertical"
+    >
+
+    <EditText
+        android:id="@+id/ge_searchBar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="look for item"
+        android:inputType="text"
+        android:imeOptions="actionSearch"
+        />
+
+    <ListView
+        android:id="@+id/ge_searchResult"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </ListView>
+
+</LinearLayout>

@@ -15,24 +15,13 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_alignParentTop="true"
-        android:weightSum="100"
         >
-
-        <EditText
-            android:id="@+id/ge_searchBar"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp"
-            android:layout_weight="20"
-            />
 
         <Button
             android:id="@+id/ge_searchButton"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="search"
-            android:layout_weight="80"
             />
     </LinearLayout>
 

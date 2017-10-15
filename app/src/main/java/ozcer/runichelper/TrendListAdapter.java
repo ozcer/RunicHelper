@@ -24,16 +24,16 @@ public class TrendListAdapter extends ArrayAdapter<String[]>{
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         LayoutInflater inflater  = LayoutInflater.from(getContext());
-        View trendRowLayout = inflater.inflate(R.layout.trend_row, parent, false);
+        View trendRow = inflater.inflate(R.layout.trend_row, parent, false);
         String trendTime = getItem(position)[0];
         String trendDelta = getItem(position)[1];
 
-        TextView tvTime = (TextView) trendRowLayout.findViewById(R.id.trend_time);
-        TextView tvDelta = (TextView) trendRowLayout.findViewById(R.id.trend_delta);
+        TextView tvTime = (TextView) trendRow.findViewById(R.id.trend_time);
+        TextView tvDelta = (TextView) trendRow.findViewById(R.id.trend_delta);
 
         tvTime.setText(trendTime);
         tvDelta.setText(trendDelta);
 
-        return trendRowLayout;
+        return trendRow;
     }
 }
