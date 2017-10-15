@@ -1,5 +1,6 @@
 package ozcer.runichelper;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,6 +8,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -59,13 +61,22 @@ public class GeSearchActivity extends AppCompatActivity {
         lvSearchResult = (ListView) findViewById(R.id.ge_searchResult);
         myAdapter = new GeSearchResultAdapter(this, searchResult);
         lvSearchResult.setAdapter(myAdapter);
+        lvSearchResult.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent i = new Intent(GeSearchActivity.this, GeActivity.class);
+                i.putExtra("itemID", searchResult.get(position)[3]);
+                Toast.makeText(GeSearchActivity.this, searchResult.get(position)[3], Toast.LENGTH_SHORT).show();
+                startActivity(i);
+            }
+        });
 
     }
 
-    public class SearchItemTask extends AsyncTask<String, Void, String> {
+    public class SearchItemTask extends AsyncTask<String, Void, JSONArray> {
 
         @Override
-        protected String doInBackground(String... params) {
+        protected JSONArray doInBackground(String... params) {
             HttpURLConnection connection = null;
             BufferedReader reader = null;
 
@@ -88,11 +99,15 @@ public class GeSearchActivity extends AppCompatActivity {
 
                 String finalJson = buffer.toString();
 
-                return finalJson;
+                JSONArray jsonArray = (new JSONObject(finalJson)).getJSONArray("items");
+
+                return jsonArray;
 
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             } catch (IOException e) {
+                e.printStackTrace();
+            } catch (JSONException e) {
                 e.printStackTrace();
             } finally {
                 if(connection != null) {
@@ -110,29 +125,28 @@ public class GeSearchActivity extends AppCompatActivity {
         }
 
         @Override
-        protected void onPostExecute(String json) {
-            super.onPostExecute(json);
-            if(json != null) {
+        protected void onPostExecute(JSONArray jsonArray) {
+            super.onPostExecute(jsonArray);
+            if(jsonArray != null) {
 
-                JSONArray jsonArray = null;
-                try {
-                    jsonArray = (new JSONObject(json)).getJSONArray("items");
-                    searchResult.clear();
-                    // {image_url, item_name, item_price}
-                    for (int i = 0; i < jsonArray.length(); i++) {
-                        String[] thisItem = new String[3];
+                searchResult.clear();
+                // {image_url, item_name, item_price}
+                for (int i = 0; i < jsonArray.length(); i++) {
+                    String[] thisItem = new String[4];
 
+                    try {
                         thisItem[0] = jsonArray.getJSONObject(i).getString("icon");
                         thisItem[1] = jsonArray.getJSONObject(i).getString("name");
                         thisItem[2] = jsonArray.getJSONObject(i).getJSONObject("current").getString("price");
-
+                        thisItem[3] = Integer.toString(jsonArray.getJSONObject(i).getInt("id"));
                         searchResult.add(thisItem);
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
                     }
-                }catch (JSONException e) {
-                    e.printStackTrace();
                 }
 
-                ((BaseAdapter)myAdapter).notifyDataSetChanged();
+                    ((BaseAdapter) myAdapter).notifyDataSetChanged();
             } else {
                 Toast.makeText(GeSearchActivity.this, "no item found", Toast.LENGTH_SHORT).show();
             }

@@ -40,6 +40,7 @@ public class GeSearchResultAdapter extends ArrayAdapter<String[]>{
         String imageUrl = getItem(position)[0];
         String name = getItem(position)[1];
         String price = getItem(position)[2];
+        String id = getItem(position)[3];
 
         Picasso.with(this.getContext()).load(imageUrl).into(ivItemImage);
         tvName.setText(name);
