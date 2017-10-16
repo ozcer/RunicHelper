@@ -65,7 +65,7 @@ public class GeSearchActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent i = new Intent(GeSearchActivity.this, GeActivity.class);
-                i.putExtra("itemID", searchResult.get(position)[3]);
+                i.putExtra("itemId", searchResult.get(position)[3]);
                 Toast.makeText(GeSearchActivity.this, searchResult.get(position)[3], Toast.LENGTH_SHORT).show();
                 startActivity(i);
             }

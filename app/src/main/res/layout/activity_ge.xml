@@ -15,11 +15,12 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_alignParentTop="true"
+        android:gravity="right"
         >
 
         <Button
             android:id="@+id/ge_searchButton"
-            android:layout_width="match_parent"
+            android:layout_width="100dp"
             android:layout_height="match_parent"
             android:text="search"
             />
@@ -39,20 +40,16 @@
             android:layout_height="wrap_content"
             android:layout_weight="80"
             android:orientation="vertical"
+            android:gravity="center"
             >
-            <ozcer.runichelper.SquareRelativeLayout
+
+            <ImageView
+                android:id="@+id/ge_itemImage"
                 android:layout_width="192px"
                 android:layout_height="192px"
-                android:padding="5px"
-                android:gravity="center"
-                >
-                <ImageView
-                    android:id="@+id/ge_itemImage"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="fitXY"
-                    />
-            </ozcer.runichelper.SquareRelativeLayout>
+                android:scaleType="fitXY"
+                android:padding="5dp"
+                />
 
 
             <TextView
