@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, GeActivity.class);
+                i.putExtra("itemId", "4151");
                 startActivity(i);
 
             }

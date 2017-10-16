@@ -16,11 +16,12 @@
         android:layout_height="50dp"
         android:layout_alignParentTop="true"
         android:gravity="right"
+        android:layout_marginBottom="5dp"
         >
 
         <Button
             android:id="@+id/ge_searchButton"
-            android:layout_width="100dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="search"
             />
@@ -58,7 +59,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:gravity="center"
-                android:text="$100"
+                android:text="$-----"
                 android:textSize="20dp"
                 />
 
@@ -75,7 +76,7 @@
                 android:id="@+id/ge_itemName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Abyssal Whip"
+                android:text="Abyssal whip"
                 android:textSize="20dp"
                 />
             <TextView
