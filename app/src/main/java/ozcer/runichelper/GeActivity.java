@@ -74,7 +74,6 @@ public class GeActivity extends AppCompatActivity {
         });
 
         currentId = getIntent().getStringExtra("itemId");
-        Toast.makeText(this, currentId, Toast.LENGTH_SHORT).show();
         if(currentId != null) {
             new RetrieveItemTask().execute(currentId);
         }

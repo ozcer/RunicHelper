@@ -66,7 +66,6 @@ public class GeSearchActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent i = new Intent(GeSearchActivity.this, GeActivity.class);
                 i.putExtra("itemId", searchResult.get(position)[3]);
-                Toast.makeText(GeSearchActivity.this, searchResult.get(position)[3], Toast.LENGTH_SHORT).show();
                 startActivity(i);
             }
         });
@@ -127,7 +126,7 @@ public class GeSearchActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(JSONArray jsonArray) {
             super.onPostExecute(jsonArray);
-            if(jsonArray != null) {
+            if(jsonArray != null && jsonArray.length() > 0) {
 
                 searchResult.clear();
                 // {image_url, item_name, item_price}
@@ -146,7 +145,7 @@ public class GeSearchActivity extends AppCompatActivity {
                     }
                 }
 
-                    ((BaseAdapter) myAdapter).notifyDataSetChanged();
+                ((BaseAdapter) myAdapter).notifyDataSetChanged();
             } else {
                 Toast.makeText(GeSearchActivity.this, "no item found", Toast.LENGTH_SHORT).show();
             }
