@@ -17,7 +17,7 @@
         android:id="@+id/nmz_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="5dp"
+        android:layout_margin="5dp"
         >
 
         <TextView
@@ -41,7 +41,7 @@
         android:id="@+id/nmz_footer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="5dp"
+        android:layout_margin="5dp"
         android:orientation="vertical"
         android:layout_alignParentBottom="true"
         >
@@ -248,6 +248,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="50 sec"
+                android:gravity="center"
                 style="@style/fontSizeRead"
 
                 android:layout_weight="25"
@@ -268,6 +269,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="5min 0s"
+                android:gravity="center"
                 style="@style/fontSizeRead"
 
                 android:layout_weight="25"
