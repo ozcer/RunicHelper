@@ -8,52 +8,70 @@
     android:gravity="center"
     android:orientation="vertical"
     >
-    <FrameLayout
-        android:layout_width="96dp"
-        android:layout_height="96dp">
-        <ImageButton
-            android:id="@+id/geButton"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/ic_ge"
-            android:background="@color/transparent"
-            android:scaleType="fitCenter"
-            android:paddingBottom="20dp"
-            />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:text="Grand Excahnge"
-            android:textAllCaps="false"
-            android:textSize="14dp"
-            android:gravity="center"
-            />
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@mipmap/ic_launcher"
+        >
 
-    </FrameLayout>
-    <FrameLayout
-        android:layout_width="96dp"
-        android:layout_height="96dp">
-        <ImageButton
-            android:id="@+id/nmzButton"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/ic_nmz"
-            android:background="@color/transparent"
-            android:scaleType="fitCenter"
-            android:paddingBottom="20dp"
-            />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:text="Nightmare Zone AFK"
-            android:textAllCaps="false"
-            android:textSize="14dp"
-            android:gravity="center"
-            />
 
-    </FrameLayout>
+
+    </ImageView>
+    <GridLayout
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <FrameLayout
+            android:layout_width="96dp"
+            android:layout_height="96dp">
+            <ImageButton
+                android:id="@+id/geButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_ge"
+                android:background="@color/transparent"
+                android:scaleType="fitCenter"
+                android:paddingBottom="20dp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:text="Grand Excahnge"
+                android:textAllCaps="false"
+                android:textSize="14dp"
+                android:gravity="center"
+                />
+
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="96dp"
+            android:layout_height="96dp">
+            <ImageButton
+                android:id="@+id/nmzButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_nmz"
+                android:background="@color/transparent"
+                android:scaleType="fitCenter"
+                android:paddingBottom="20dp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:text="Nightmare Zone AFK"
+                android:textAllCaps="false"
+                android:textSize="14dp"
+                android:gravity="center"
+                />
+
+        </FrameLayout>
+
+
+    </GridLayout>
+
 
 
 </LinearLayout>
