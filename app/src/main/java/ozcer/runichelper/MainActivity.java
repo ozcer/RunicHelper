@@ -5,17 +5,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
-    Button btnNMZ;
-    Button btnGE;
+    ImageButton btnNMZ;
+    ImageButton btnGE;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        btnNMZ = (Button) findViewById(R.id.nmzButton);
-        btnGE = (Button) findViewById(R.id.geButton);
+        btnNMZ = (ImageButton) findViewById(R.id.nmzButton);
+        btnGE = (ImageButton) findViewById(R.id.geButton);
 
         btnNMZ.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -8,20 +8,52 @@
     android:gravity="center"
     android:orientation="vertical"
     >
+    <FrameLayout
+        android:layout_width="96dp"
+        android:layout_height="96dp">
+        <ImageButton
+            android:id="@+id/geButton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_ge"
+            android:background="@color/transparent"
+            android:scaleType="fitCenter"
+            android:paddingBottom="20dp"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:text="Grand Excahnge"
+            android:textAllCaps="false"
+            android:textSize="14dp"
+            android:gravity="center"
+            />
 
-    <Button
-        android:id="@+id/geButton"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:layout_margin="25dp"
-        android:text="Grand Exchange"
-        />
+    </FrameLayout>
+    <FrameLayout
+        android:layout_width="96dp"
+        android:layout_height="96dp">
+        <ImageButton
+            android:id="@+id/nmzButton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_nmz"
+            android:background="@color/transparent"
+            android:scaleType="fitCenter"
+            android:paddingBottom="20dp"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:text="Nightmare Zone AFK"
+            android:textAllCaps="false"
+            android:textSize="14dp"
+            android:gravity="center"
+            />
 
-    <Button
-        android:id="@+id/nmzButton"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:text="Nightmare Zone"
-        />
+    </FrameLayout>
+
 
 </LinearLayout>
