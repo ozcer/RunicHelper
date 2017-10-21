@@ -10,7 +10,8 @@
 
     <style name="fontSizeRead">
         <!-- Customize your theme here. -->
-        <item name="android:textSize">17dp</item>
+        <item name="android:textSize">15dp</item>
+        <item name="android:textColor">@color/orangeText</item>
     </style>
 
     <style name="fontSizeInput">

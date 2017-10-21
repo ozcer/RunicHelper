@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="ozcer.runichelper.NmzActivity"
+    android:background="@color/UiLight"
 
-    android:padding="6dp"
 
     android:orientation="vertical"
 
@@ -17,7 +17,9 @@
         android:id="@+id/nmz_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@color/UiDark"
+        android:padding="6dp"
         >
 
         <TextView
@@ -25,6 +27,7 @@
             android:layout_height="wrap_content"
             android:text="prayer drain: "
             style="@style/fontSizeRead"
+
             />
         <TextView
             android:id="@+id/drainRate"
@@ -41,9 +44,11 @@
         android:id="@+id/nmz_footer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+        android:layout_marginTop="6dp"
+        android:padding="5dp"
         android:orientation="vertical"
         android:layout_alignParentBottom="true"
+        android:background="@color/UiDark"
         >
         <LinearLayout
             android:layout_width="match_parent"
@@ -169,7 +174,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:textSize="25dp"
+                    android:textSize="15dp"
                     android:gravity="center"
                     android:text="X"
                     />
@@ -202,7 +207,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:textSize="25dp"
+                    android:textSize="15dp"
                     android:gravity="center"
                     android:text="X"
                     />

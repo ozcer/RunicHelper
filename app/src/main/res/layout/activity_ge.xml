@@ -6,34 +6,18 @@
     android:layout_height="match_parent"
     tools:context="ozcer.runichelper.GeActivity"
     android:orientation="vertical"
-    android:paddingLeft="5dp"
-    android:paddingRight="5dp"
-
+    android:background="@color/UiLight"
     >
-    <LinearLayout
-        android:id="@+id/ge_topBar"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_alignParentTop="true"
-        android:gravity="right"
-        android:layout_marginBottom="5dp"
-        >
-
-        <Button
-            android:id="@+id/ge_searchButton"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="search"
-            />
-    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/ge_summarySection"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/ge_topBar"
+        android:padding="5dp"
+
         android:weightSum="100"
         android:orientation="horizontal"
+        android:background="@color/UiDark"
         >
 
         <LinearLayout
@@ -43,25 +27,40 @@
             android:orientation="vertical"
             android:gravity="center"
             >
-
             <ImageView
                 android:id="@+id/ge_itemImage"
                 android:layout_width="192px"
                 android:layout_height="192px"
                 android:scaleType="fitXY"
-                android:padding="5dp"
+                android:padding="2dp"
                 />
 
-
-            <TextView
-                android:id="@+id/ge_itemPrice"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
                 android:gravity="center"
-                android:text="$-----"
-                android:textSize="20dp"
-                />
+                >
+                <ImageView
+                    android:layout_width="27dp"
+                    android:layout_height="27dp"
+                    android:src="@drawable/coins"
+                    android:scaleType="fitXY"
+                    android:layout_marginRight="5dp"
+                    />
+                <TextView
+                    android:id="@+id/ge_itemPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="center"
+                    android:text="-----"
+                    style="@style/fontSizeRead"
+                    android:textColor="@color/yellowText"
+                    />
+
+
+            </LinearLayout>
+
 
 
         </LinearLayout>
@@ -71,20 +70,21 @@
             android:layout_height="match_parent"
             android:layout_weight="20"
             android:orientation="vertical"
+            android:layout_marginLeft="10dp"
             >
             <TextView
                 android:id="@+id/ge_itemName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Abyssal whip"
-                android:textSize="20dp"
+                style="@style/fontSizeRead"
                 />
             <TextView
                 android:id="@+id/ge_itemDescription"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="A weapon from the abyss."
-                android:textSize="20dp"
+
+                style="@style/fontSizeRead"
+                android:textColor="@color/yellowText"
                 />
 
         </LinearLayout>
@@ -92,14 +92,35 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/ge_botBar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="right"
+        >
+        <Button
+            android:id="@+id/ge_searchButton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Look up item"
+            android:background="@color/UiDark"
+            android:elevation="2dp"
+            android:textColor="@color/orangeText"
+            />
+    </LinearLayout>
+
     <ListView
         android:id="@+id/ge_trend"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/ge_summarySection"
+        android:layout_above="@id/ge_botBar"
         >
 
     </ListView>
+
+
 
 
 

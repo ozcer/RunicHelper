@@ -42,8 +42,8 @@ public class GeActivity extends AppCompatActivity {
     ListView lvTrendList;
     ListAdapter myAdapter;
     String apiBase = "http://services.runescape.com/m=itemdb_oldschool/api/";
-    String[][] trends = {{"Today's Change", "+1"}, {"1 Month Change", "+2"},
-            {"3 Month Change", "+3"}, {"6 Month Change", "+4"}};
+    String[][] trends = {{"Today's Change", "-"}, {"1 Month Change", "-"},
+            {"3 Month Change", "-"}, {"6 Month Change", "-"}};
 
 
     String currentId = null;

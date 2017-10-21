@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="2dp"
+    android:padding="5dp"
     >
 
     <TextView
@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:text="Today"
-        android:textSize="20dp"
+        android:textSize="15dp"
         />
 
     <TextView
@@ -19,7 +19,7 @@
         android:layout_height="match_parent"
         android:layout_alignParentRight="true"
         android:text="+123"
-        android:textSize="20dp"
+        android:textSize="15dp"
         />
 
 </RelativeLayout>
