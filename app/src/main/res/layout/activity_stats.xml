@@ -11,17 +11,20 @@
         android:layout_width="match_parent"
         android:layout_height="50dp">
         <Button
+            android:id="@+id/stats_searchButton"
             android:layout_width="100dp"
             android:layout_height="match_parent"
             android:text="search"
             />
         <EditText
+            android:id="@+id/stats_searchText"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
     </LinearLayout>
 
     <TextView
+        android:id="@+id/stats_content"
         android:layout_below="@id/stats_topBar"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
