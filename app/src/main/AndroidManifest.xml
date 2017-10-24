@@ -20,7 +20,8 @@
         </activity>
         <activity android:name=".NmzActivity" />
         <activity android:name=".GeActivity" />
-        <activity android:name=".GeSearchActivity"></activity>
+        <activity android:name=".GeSearchActivity" />
+        <activity android:name=".StatsActivity"></activity>
     </application>
 
 </manifest>
